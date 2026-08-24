@@ -279,7 +279,7 @@ body.has-cursor:has(a:hover) .cursor, body.has-cursor:has(button:hover) .cursor,
 .review-fan-card{
   grid-area:stack;width:min(320px,84vw);min-height:172px;
   background:var(--ink-2);border:1px solid var(--line-ink);
-  padding:22px 24px;border-radius:2px;cursor:default;
+  padding:22px 24px;border-radius:2px;cursor:pointer;
   filter:grayscale(1) brightness(.82);
   transition:transform .6s cubic-bezier(.2,.8,.2,1), filter .5s ease, border-color .4s ease, box-shadow .4s ease;
   box-shadow:0 10px 30px rgba(0,0,0,.25);
@@ -290,13 +290,13 @@ body.has-cursor:has(a:hover) .cursor, body.has-cursor:has(button:hover) .cursor,
 .review-fan-card:nth-child(4){transform:skewY(-6deg) translate(45px,34px);z-index:30;}
 .review-fan-card:nth-child(5){transform:skewY(-6deg) translate(135px,52px);z-index:20;}
 .review-fan-card:nth-child(6){transform:skewY(-6deg) translate(225px,70px);z-index:10;}
-.review-fan-card:hover{filter:grayscale(0) brightness(1);border-color:rgba(200,151,63,.55);z-index:100;box-shadow:0 24px 50px rgba(0,0,0,.4);}
-.review-fan-card:nth-child(1):hover{transform:skewY(-6deg) translate(-225px,-36px);}
-.review-fan-card:nth-child(2):hover{transform:skewY(-6deg) translate(-135px,-18px);}
-.review-fan-card:nth-child(3):hover{transform:skewY(-6deg) translate(-45px,0);}
-.review-fan-card:nth-child(4):hover{transform:skewY(-6deg) translate(45px,18px);}
-.review-fan-card:nth-child(5):hover{transform:skewY(-6deg) translate(135px,36px);}
-.review-fan-card:nth-child(6):hover{transform:skewY(-6deg) translate(225px,54px);}
+.review-fan-card:is(:hover,.active){filter:grayscale(0) brightness(1);border-color:rgba(200,151,63,.55);z-index:100;box-shadow:0 24px 50px rgba(0,0,0,.4);}
+.review-fan-card:nth-child(1):is(:hover,.active){transform:skewY(-6deg) translate(-225px,-36px);}
+.review-fan-card:nth-child(2):is(:hover,.active){transform:skewY(-6deg) translate(-135px,-18px);}
+.review-fan-card:nth-child(3):is(:hover,.active){transform:skewY(-6deg) translate(-45px,0);}
+.review-fan-card:nth-child(4):is(:hover,.active){transform:skewY(-6deg) translate(45px,18px);}
+.review-fan-card:nth-child(5):is(:hover,.active){transform:skewY(-6deg) translate(135px,36px);}
+.review-fan-card:nth-child(6):is(:hover,.active){transform:skewY(-6deg) translate(225px,54px);}
 .review-fan-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
 .review-fan-icon{width:26px;height:26px;border-radius:50%;background:rgba(200,151,63,.16);display:flex;align-items:center;justify-content:center;flex:none;}
 .review-fan-icon svg{width:13px;height:13px;color:var(--gold-lt);}
@@ -320,12 +320,12 @@ body.has-cursor:has(a:hover) .cursor, body.has-cursor:has(button:hover) .cursor,
   .review-fan-card:nth-child(4){transform:skewY(-6deg) translate(18px,26px);}
   .review-fan-card:nth-child(5){transform:skewY(-6deg) translate(54px,40px);}
   .review-fan-card:nth-child(6){transform:skewY(-6deg) translate(90px,54px);}
-  .review-fan-card:nth-child(1):hover{transform:skewY(-6deg) translate(-90px,-30px);}
-  .review-fan-card:nth-child(2):hover{transform:skewY(-6deg) translate(-54px,-16px);}
-  .review-fan-card:nth-child(3):hover{transform:skewY(-6deg) translate(-18px,-2px);}
-  .review-fan-card:nth-child(4):hover{transform:skewY(-6deg) translate(18px,12px);}
-  .review-fan-card:nth-child(5):hover{transform:skewY(-6deg) translate(54px,26px);}
-  .review-fan-card:nth-child(6):hover{transform:skewY(-6deg) translate(90px,40px);}
+  .review-fan-card:nth-child(1):is(:hover,.active){transform:skewY(-6deg) translate(-90px,-30px);}
+  .review-fan-card:nth-child(2):is(:hover,.active){transform:skewY(-6deg) translate(-54px,-16px);}
+  .review-fan-card:nth-child(3):is(:hover,.active){transform:skewY(-6deg) translate(-18px,-2px);}
+  .review-fan-card:nth-child(4):is(:hover,.active){transform:skewY(-6deg) translate(18px,12px);}
+  .review-fan-card:nth-child(5):is(:hover,.active){transform:skewY(-6deg) translate(54px,26px);}
+  .review-fan-card:nth-child(6):is(:hover,.active){transform:skewY(-6deg) translate(90px,40px);}
 }
 @media (max-width:640px){
   .review-fan-card{width:min(320px,84vw);}
@@ -335,12 +335,12 @@ body.has-cursor:has(a:hover) .cursor, body.has-cursor:has(button:hover) .cursor,
   .review-fan-card:nth-child(4){transform:skewY(-6deg) translate(4px,12px);}
   .review-fan-card:nth-child(5){transform:skewY(-6deg) translate(13px,19px);}
   .review-fan-card:nth-child(6){transform:skewY(-6deg) translate(22px,26px);}
-  .review-fan-card:nth-child(1):hover{transform:skewY(-6deg) translate(-22px,-19px);}
-  .review-fan-card:nth-child(2):hover{transform:skewY(-6deg) translate(-13px,-12px);}
-  .review-fan-card:nth-child(3):hover{transform:skewY(-6deg) translate(-4px,-5px);}
-  .review-fan-card:nth-child(4):hover{transform:skewY(-6deg) translate(4px,2px);}
-  .review-fan-card:nth-child(5):hover{transform:skewY(-6deg) translate(13px,9px);}
-  .review-fan-card:nth-child(6):hover{transform:skewY(-6deg) translate(22px,16px);}
+  .review-fan-card:nth-child(1):is(:hover,.active){transform:skewY(-6deg) translate(-22px,-19px);}
+  .review-fan-card:nth-child(2):is(:hover,.active){transform:skewY(-6deg) translate(-13px,-12px);}
+  .review-fan-card:nth-child(3):is(:hover,.active){transform:skewY(-6deg) translate(-4px,-5px);}
+  .review-fan-card:nth-child(4):is(:hover,.active){transform:skewY(-6deg) translate(4px,2px);}
+  .review-fan-card:nth-child(5):is(:hover,.active){transform:skewY(-6deg) translate(13px,9px);}
+  .review-fan-card:nth-child(6):is(:hover,.active){transform:skewY(-6deg) translate(22px,16px);}
   .review-stack{padding:50px 0 120px;}
 }
 
@@ -724,32 +724,32 @@ body.has-cursor:has(a:hover) .cursor, body.has-cursor:has(button:hover) .cursor,
       </a>
     </div>
     <div class="review-stack reveal">
-      <div class="review-fan-card">
+      <div class="review-fan-card" tabindex="0">
         <div class="review-fan-top"><span class="review-fan-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2H7V8Zm8 0h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2h-2V8Z"/></svg></span><span class="review-fan-stars">★★★★★</span></div>
         <p>«Хочется выразить огромную благодарность Анне и её команде «Бари Принт» за прекрасную работу! Заказывали у них оформление кружек к двум праздникам — 23 февраля и 8 марта. И дети, и учителя были просто в восторге!»</p>
         <p class="review-fan-name">Елена С. · Яндекс Карты</p>
       </div>
-      <div class="review-fan-card">
+      <div class="review-fan-card" tabindex="0">
         <div class="review-fan-top"><span class="review-fan-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2H7V8Zm8 0h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2h-2V8Z"/></svg></span><span class="review-fan-stars">★★★★★</span></div>
         <p>«Уже несколько раз клеил у ребят на заднее стекло рекламу. Профессионально задизайнили, максимально стремительно напечатали и поклеили. По деньгам тоже очень приятно у них всегда! Однозначная пятёрка.»</p>
         <p class="review-fan-name">Ли М. · Яндекс Карты</p>
       </div>
-      <div class="review-fan-card">
+      <div class="review-fan-card" tabindex="0">
         <div class="review-fan-top"><span class="review-fan-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2H7V8Zm8 0h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2h-2V8Z"/></svg></span><span class="review-fan-stars">★★★★★</span></div>
         <p>«Большое спасибо за оперативную и качественную работу! Баннер напечатали точно в срок, цвета яркие, материал отличный. Очень довольны результатом и сотрудничеством. Обязательно обратимся ещё!»</p>
         <p class="review-fan-name">Марина Галечян · Яндекс Карты</p>
       </div>
-      <div class="review-fan-card">
+      <div class="review-fan-card" tabindex="0">
         <div class="review-fan-top"><span class="review-fan-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2H7V8Zm8 0h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2h-2V8Z"/></svg></span><span class="review-fan-stars">★★★★★</span></div>
         <p>«Третий год заказываю у ребят футболки с печатью! Как всегда быстро, чётко, в срок и по хорошей цене! Печать держится отлично при стирке на высоких температурах.»</p>
         <p class="review-fan-name">Анна П. · Яндекс Карты</p>
       </div>
-      <div class="review-fan-card">
+      <div class="review-fan-card" tabindex="0">
         <div class="review-fan-top"><span class="review-fan-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2H7V8Zm8 0h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2h-2V8Z"/></svg></span><span class="review-fan-stars">★★★★★</span></div>
         <p>«Заказывала рамку ПВХ с УФ печатью, качество потрясающее, чётко, ярко, по срокам и стоимости очень хорошие условия получились. Дальнейший корпоративный мерч теперь только к ним!»</p>
         <p class="review-fan-name">Алёна · Яндекс Карты</p>
       </div>
-      <div class="review-fan-card">
+      <div class="review-fan-card" tabindex="0">
         <div class="review-fan-top"><span class="review-fan-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2H7V8Zm8 0h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2h-2V8Z"/></svg></span><span class="review-fan-stars">★★★★★</span></div>
         <p>«Часто пользуюсь услугами БариПринт. Печать на чашке выдержала отлично посудомоечную машину, краска яркая, как и прежде, а уже более нескольких лет ей. Ребята специалисты своего дела, рекомендую.»</p>
         <p class="review-fan-name">Оля · Яндекс Карты</p>
@@ -1034,6 +1034,22 @@ body.has-cursor:has(a:hover) .cursor, body.has-cursor:has(button:hover) .cursor,
     if(processFallback) processFallback.setAttribute('hidden', '');
     orbitalWrap.removeAttribute('hidden');
   }
+
+  // ---- review fan cards: tap/click to bring a card to front (mirrors :hover for touch) ----
+  var reviewCards = Array.prototype.slice.call(document.querySelectorAll('.review-fan-card'));
+  reviewCards.forEach(function(card){
+    card.addEventListener('click', function(){
+      var wasActive = card.classList.contains('active');
+      reviewCards.forEach(function(c){ c.classList.remove('active'); });
+      if(!wasActive) card.classList.add('active');
+    });
+    card.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        card.click();
+      }
+    });
+  });
 })();
 </script>
 </body>
