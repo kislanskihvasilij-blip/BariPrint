@@ -52,7 +52,13 @@
     "opens": "09:00",
     "closes": "18:00"
   },
-  "sameAs": ["https://vk.com/bariprint", "https://t.me/+79648943838"]
+  "sameAs": ["https://vk.com/bariprint", "https://t.me/+79648943838", "https://yandex.ru/maps/org/bari_print/65366024340/"],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "26",
+    "ratingCount": "38"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -265,37 +271,77 @@ body.has-cursor:has(a:hover) .cursor, body.has-cursor:has(button:hover) .cursor,
 .proc-body p{font-size:14px;color:var(--muted-cream);line-height:1.75;}
 
 /* ============ TESTIMONIALS — fanned display-cards ============ */
-.review-stack{display:grid;grid-template-areas:"stack";place-items:center;padding:54px 0 110px;}
+.rating-badge{display:inline-flex;align-items:center;gap:9px;margin-top:20px;font-size:13px;color:var(--muted-ink);text-decoration:none;transition:color .25s ease;}
+.rating-badge:hover{color:var(--gold-lt);}
+.rating-badge .stars{color:var(--gold);font-size:13px;letter-spacing:1px;}
+.rating-badge b{color:var(--text-cream);font-weight:700;}
+.review-stack{display:grid;grid-template-areas:"stack";place-items:center;padding:60px 0 140px;}
 .review-fan-card{
-  grid-area:stack;width:min(360px,86vw);min-height:172px;
+  grid-area:stack;width:min(320px,84vw);min-height:172px;
   background:var(--ink-2);border:1px solid var(--line-ink);
-  padding:24px 28px;border-radius:2px;cursor:default;
+  padding:22px 24px;border-radius:2px;cursor:default;
   filter:grayscale(1) brightness(.82);
   transition:transform .6s cubic-bezier(.2,.8,.2,1), filter .5s ease, border-color .4s ease, box-shadow .4s ease;
   box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
-.review-fan-card:nth-child(1){transform:skewY(-6deg) translate(-90px,-8px);z-index:30;}
-.review-fan-card:nth-child(2){transform:skewY(-6deg) translate(0,26px);z-index:20;}
-.review-fan-card:nth-child(3){transform:skewY(-6deg) translate(90px,60px);z-index:10;}
-.review-fan-card:hover{filter:grayscale(0) brightness(1);border-color:rgba(200,151,63,.55);z-index:40;box-shadow:0 24px 50px rgba(0,0,0,.4);}
-.review-fan-card:nth-child(1):hover{transform:skewY(-6deg) translate(-90px,-22px);}
-.review-fan-card:nth-child(2):hover{transform:skewY(-6deg) translate(0,8px);}
-.review-fan-card:nth-child(3):hover{transform:skewY(-6deg) translate(90px,38px);}
+.review-fan-card:nth-child(1){transform:skewY(-6deg) translate(-225px,-20px);z-index:60;}
+.review-fan-card:nth-child(2){transform:skewY(-6deg) translate(-135px,-2px);z-index:50;}
+.review-fan-card:nth-child(3){transform:skewY(-6deg) translate(-45px,16px);z-index:40;}
+.review-fan-card:nth-child(4){transform:skewY(-6deg) translate(45px,34px);z-index:30;}
+.review-fan-card:nth-child(5){transform:skewY(-6deg) translate(135px,52px);z-index:20;}
+.review-fan-card:nth-child(6){transform:skewY(-6deg) translate(225px,70px);z-index:10;}
+.review-fan-card:hover{filter:grayscale(0) brightness(1);border-color:rgba(200,151,63,.55);z-index:100;box-shadow:0 24px 50px rgba(0,0,0,.4);}
+.review-fan-card:nth-child(1):hover{transform:skewY(-6deg) translate(-225px,-36px);}
+.review-fan-card:nth-child(2):hover{transform:skewY(-6deg) translate(-135px,-18px);}
+.review-fan-card:nth-child(3):hover{transform:skewY(-6deg) translate(-45px,0);}
+.review-fan-card:nth-child(4):hover{transform:skewY(-6deg) translate(45px,18px);}
+.review-fan-card:nth-child(5):hover{transform:skewY(-6deg) translate(135px,36px);}
+.review-fan-card:nth-child(6):hover{transform:skewY(-6deg) translate(225px,54px);}
 .review-fan-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
 .review-fan-icon{width:26px;height:26px;border-radius:50%;background:rgba(200,151,63,.16);display:flex;align-items:center;justify-content:center;flex:none;}
 .review-fan-icon svg{width:13px;height:13px;color:var(--gold-lt);}
 .review-fan-stars{color:var(--gold);letter-spacing:2px;font-size:12px;}
-.review-fan-card p{font-size:13.5px;line-height:1.75;color:var(--cream-2);margin:0 0 14px;}
-.review-fan-name{font-size:12.5px;font-weight:600;color:var(--text-cream);display:flex;align-items:center;gap:10px;margin:0;}
-.review-fan-name::before{content:"";width:24px;height:1px;background:var(--gold);flex:none;}
+.review-fan-card p{font-size:13px;line-height:1.7;color:var(--cream-2);margin:0 0 14px;}
+.review-fan-name{font-size:12px;font-weight:600;color:var(--text-cream);display:flex;align-items:center;gap:10px;margin:0;}
+.review-fan-name::before{content:"";width:20px;height:1px;background:var(--gold);flex:none;}
+
+/* ============ review ticker ============ */
+.review-marquee{margin-top:8px;overflow:hidden;border-top:1px solid var(--line-ink);border-bottom:1px solid var(--line-ink);padding:16px 0;}
+.review-marquee-track{display:flex;width:max-content;animation:marquee 46s linear infinite;}
+.review-marquee-set{display:flex;}
+.review-marquee-set span{display:flex;align-items:center;font-size:12.5px;color:var(--muted-ink);padding:0 26px;white-space:nowrap;border-right:1px solid var(--line-ink);}
+.review-marquee-set span b{color:var(--text-cream);font-weight:600;margin-left:10px;}
+.review-marquee-set span i{color:var(--gold);font-style:normal;margin-left:10px;letter-spacing:1px;font-size:11px;}
+
+@media (max-width:900px){
+  .review-fan-card:nth-child(1){transform:skewY(-6deg) translate(-90px,-16px);}
+  .review-fan-card:nth-child(2){transform:skewY(-6deg) translate(-54px,-2px);}
+  .review-fan-card:nth-child(3){transform:skewY(-6deg) translate(-18px,12px);}
+  .review-fan-card:nth-child(4){transform:skewY(-6deg) translate(18px,26px);}
+  .review-fan-card:nth-child(5){transform:skewY(-6deg) translate(54px,40px);}
+  .review-fan-card:nth-child(6){transform:skewY(-6deg) translate(90px,54px);}
+  .review-fan-card:nth-child(1):hover{transform:skewY(-6deg) translate(-90px,-30px);}
+  .review-fan-card:nth-child(2):hover{transform:skewY(-6deg) translate(-54px,-16px);}
+  .review-fan-card:nth-child(3):hover{transform:skewY(-6deg) translate(-18px,-2px);}
+  .review-fan-card:nth-child(4):hover{transform:skewY(-6deg) translate(18px,12px);}
+  .review-fan-card:nth-child(5):hover{transform:skewY(-6deg) translate(54px,26px);}
+  .review-fan-card:nth-child(6):hover{transform:skewY(-6deg) translate(90px,40px);}
+}
 @media (max-width:640px){
-  .review-fan-card:nth-child(1){transform:skewY(-6deg) translate(-24px,-6px);}
-  .review-fan-card:nth-child(2){transform:skewY(-6deg) translate(0,22px);}
-  .review-fan-card:nth-child(3){transform:skewY(-6deg) translate(24px,50px);}
-  .review-fan-card:nth-child(1):hover{transform:skewY(-6deg) translate(-24px,-20px);}
-  .review-fan-card:nth-child(2):hover{transform:skewY(-6deg) translate(0,4px);}
-  .review-fan-card:nth-child(3):hover{transform:skewY(-6deg) translate(24px,28px);}
-  .review-stack{padding:44px 0 120px;}
+  .review-fan-card{width:min(320px,84vw);}
+  .review-fan-card:nth-child(1){transform:skewY(-6deg) translate(-22px,-9px);}
+  .review-fan-card:nth-child(2){transform:skewY(-6deg) translate(-13px,-2px);}
+  .review-fan-card:nth-child(3){transform:skewY(-6deg) translate(-4px,5px);}
+  .review-fan-card:nth-child(4){transform:skewY(-6deg) translate(4px,12px);}
+  .review-fan-card:nth-child(5){transform:skewY(-6deg) translate(13px,19px);}
+  .review-fan-card:nth-child(6){transform:skewY(-6deg) translate(22px,26px);}
+  .review-fan-card:nth-child(1):hover{transform:skewY(-6deg) translate(-22px,-19px);}
+  .review-fan-card:nth-child(2):hover{transform:skewY(-6deg) translate(-13px,-12px);}
+  .review-fan-card:nth-child(3):hover{transform:skewY(-6deg) translate(-4px,-5px);}
+  .review-fan-card:nth-child(4):hover{transform:skewY(-6deg) translate(4px,2px);}
+  .review-fan-card:nth-child(5):hover{transform:skewY(-6deg) translate(13px,9px);}
+  .review-fan-card:nth-child(6):hover{transform:skewY(-6deg) translate(22px,16px);}
+  .review-stack{padding:50px 0 120px;}
 }
 
 /* ============ PROCESS — radial orbital timeline ============ */
@@ -672,25 +718,69 @@ body.has-cursor:has(a:hover) .cursor, body.has-cursor:has(button:hover) .cursor,
     <div class="section-head reveal">
       <p class="eyebrow" data-n="06">Отзывы</p>
       <h2 class="heading">Что говорят<br>заказчики</h2>
+      <a class="rating-badge" href="https://yandex.ru/maps/org/bari_print/65366024340/reviews/" target="_blank" rel="noopener">
+        <span class="stars">★★★★★</span>
+        <span><b>5,0</b> · 38 оценок · 26 отзывов на Яндекс Картах →</span>
+      </a>
     </div>
     <div class="review-stack reveal">
       <div class="review-fan-card">
         <div class="review-fan-top"><span class="review-fan-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2H7V8Zm8 0h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2h-2V8Z"/></svg></span><span class="review-fan-stars">★★★★★</span></div>
-        <p>«Отличная типография! С полуслова понимают, всегда всё в срок отдают! Работаем на постоянной основе уже полгода. Довольны, рекомендую.»</p>
-        <p class="review-fan-name">Наталья</p>
+        <p>«Хочется выразить огромную благодарность Анне и её команде «Бари Принт» за прекрасную работу! Заказывали у них оформление кружек к двум праздникам — 23 февраля и 8 марта. И дети, и учителя были просто в восторге!»</p>
+        <p class="review-fan-name">Елена С. · Яндекс Карты</p>
       </div>
       <div class="review-fan-card">
         <div class="review-fan-top"><span class="review-fan-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2H7V8Zm8 0h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2h-2V8Z"/></svg></span><span class="review-fan-stars">★★★★★</span></div>
-        <p>«Прекрасная компания! Всё делают вовремя, ценой не пугают, качество отличное! Несколько лет сотрудничаем — световые короба, визитки, баннеры и т.д. только у них.»</p>
-        <p class="review-fan-name">Константин</p>
+        <p>«Уже несколько раз клеил у ребят на заднее стекло рекламу. Профессионально задизайнили, максимально стремительно напечатали и поклеили. По деньгам тоже очень приятно у них всегда! Однозначная пятёрка.»</p>
+        <p class="review-fan-name">Ли М. · Яндекс Карты</p>
       </div>
       <div class="review-fan-card">
         <div class="review-fan-top"><span class="review-fan-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2H7V8Zm8 0h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2h-2V8Z"/></svg></span><span class="review-fan-stars">★★★★★</span></div>
-        <p>«Отличная типография, всегда заказываю здесь, если что-то требуется. Уже много раз заказывала визитки, листовки и наклейки — всегда довольна результатом.»</p>
-        <p class="review-fan-name">Юлия</p>
+        <p>«Большое спасибо за оперативную и качественную работу! Баннер напечатали точно в срок, цвета яркие, материал отличный. Очень довольны результатом и сотрудничеством. Обязательно обратимся ещё!»</p>
+        <p class="review-fan-name">Марина Галечян · Яндекс Карты</p>
+      </div>
+      <div class="review-fan-card">
+        <div class="review-fan-top"><span class="review-fan-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2H7V8Zm8 0h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2h-2V8Z"/></svg></span><span class="review-fan-stars">★★★★★</span></div>
+        <p>«Третий год заказываю у ребят футболки с печатью! Как всегда быстро, чётко, в срок и по хорошей цене! Печать держится отлично при стирке на высоких температурах.»</p>
+        <p class="review-fan-name">Анна П. · Яндекс Карты</p>
+      </div>
+      <div class="review-fan-card">
+        <div class="review-fan-top"><span class="review-fan-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2H7V8Zm8 0h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2h-2V8Z"/></svg></span><span class="review-fan-stars">★★★★★</span></div>
+        <p>«Заказывала рамку ПВХ с УФ печатью, качество потрясающее, чётко, ярко, по срокам и стоимости очень хорошие условия получились. Дальнейший корпоративный мерч теперь только к ним!»</p>
+        <p class="review-fan-name">Алёна · Яндекс Карты</p>
+      </div>
+      <div class="review-fan-card">
+        <div class="review-fan-top"><span class="review-fan-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2H7V8Zm8 0h4v4c0 2.2-1.8 4-4 4v-2c1.1 0 2-.9 2-2h-2V8Z"/></svg></span><span class="review-fan-stars">★★★★★</span></div>
+        <p>«Часто пользуюсь услугами БариПринт. Печать на чашке выдержала отлично посудомоечную машину, краска яркая, как и прежде, а уже более нескольких лет ей. Ребята специалисты своего дела, рекомендую.»</p>
+        <p class="review-fan-name">Оля · Яндекс Карты</p>
       </div>
     </div>
     <p class="orbital-hint reveal">Наведите на карточку, чтобы прочитать отзыв целиком</p>
+
+    <div class="review-marquee reveal" role="list" aria-label="Ещё отзывы с Яндекс Карт">
+      <div class="review-marquee-track">
+        <div class="review-marquee-set">
+          <span role="listitem">«Клиент второй год — качество на высоте, хорошие цены»<b>Аня Б.</b><i>★★★★★</i></span>
+          <span role="listitem">«Табличку сделали в кратчайший срок и качественно»<b>Георгий М.</b><i>★★★★★</i></span>
+          <span role="listitem">«Всегда идут навстречу, помогают с дизайном»<b>Светлана Я.</b><i>★★★★★</i></span>
+          <span role="listitem">«Быстро сделали макет, отрисовали логотип»<b>Ольга О.</b><i>★★★★★</i></span>
+          <span role="listitem">«Заказываю визитки — быстро, красиво, по приятной цене»<b>Светлана</b><i>★★★★★</i></span>
+          <span role="listitem">«С полуслова понимают, всегда всё в срок»<b>Наталия М.</b><i>★★★★★</i></span>
+          <span role="listitem">«Анна всегда приходит на помощь»<b>Виктория К.</b><i>★★★★★</i></span>
+          <span role="listitem">«Сделали в срок и на высшем уровне»<b>Регина Г.</b><i>★★★★★</i></span>
+        </div>
+        <div class="review-marquee-set" aria-hidden="true">
+          <span>«Клиент второй год — качество на высоте, хорошие цены»<b>Аня Б.</b><i>★★★★★</i></span>
+          <span>«Табличку сделали в кратчайший срок и качественно»<b>Георгий М.</b><i>★★★★★</i></span>
+          <span>«Всегда идут навстречу, помогают с дизайном»<b>Светлана Я.</b><i>★★★★★</i></span>
+          <span>«Быстро сделали макет, отрисовали логотип»<b>Ольга О.</b><i>★★★★★</i></span>
+          <span>«Заказываю визитки — быстро, красиво, по приятной цене»<b>Светлана</b><i>★★★★★</i></span>
+          <span>«С полуслова понимают, всегда всё в срок»<b>Наталия М.</b><i>★★★★★</i></span>
+          <span>«Анна всегда приходит на помощь»<b>Виктория К.</b><i>★★★★★</i></span>
+          <span>«Сделали в срок и на высшем уровне»<b>Регина Г.</b><i>★★★★★</i></span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
