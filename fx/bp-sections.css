@@ -1,0 +1,134 @@
+/* BariPrint custom sections (3D printing, web development) matched to the Tilda page: #efefef bg, 1200px grid, Inter Tight. */
+.bp-sec {
+  --bp-blue: #0082e0;
+  --bp-orange: #fb5400;
+  --bp-ink: #222;
+  --bp-muted: #5b6470;
+  --bp-card: #fff;
+  --bp-radius: 17px;
+  padding: 110px 20px 40px;
+  font-family: "Inter Tight", Arial, sans-serif;
+  color: var(--bp-ink);
+}
+.bp-sec * { box-sizing: border-box; }
+.bp-sec__wrap { max-width: 1200px; margin: 0 auto; }
+.bp-sec__title {
+  margin: 0 0 14px;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.17;
+  text-transform: uppercase;
+  text-align: center;
+}
+.bp-sec__title b { color: var(--bp-blue); font-weight: inherit; }
+.bp-sec__lead {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--bp-muted);
+}
+.bp-sec__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
+.bp-sec--flip .bp-sec__visual { order: 2; }
+
+/* visual panel */
+.bp-sec__visual {
+  position: relative;
+  min-height: 460px;
+  border-radius: var(--bp-radius);
+  background: var(--bp-blue);
+  color: #fff;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+}
+/* photo from Unsplash (free license) with a brand-blue fade so the chips stay readable */
+.bp-sec__visual img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.bp-sec__visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(0, 130, 224, 0) 35%, rgba(0, 92, 168, 0.88) 100%);
+}
+.bp-sec__visual:hover img { transform: scale(1.04); }
+.bp-sec__visual h3 { margin: 0 0 14px; font-size: 26px; font-weight: 600; line-height: 1.2; }
+.bp-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.bp-chip {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.bp-chip--solid { background: #fff; color: var(--bp-blue); box-shadow: none; }
+
+/* content panel */
+.bp-sec__body { display: flex; flex-direction: column; gap: 20px; }
+.bp-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.bp-card {
+  padding: 20px;
+  border-radius: var(--bp-radius);
+  background: var(--bp-card);
+  transition: transform 0.35s cubic-bezier(0.3, 1.6, 0.5, 1), box-shadow 0.35s;
+}
+.bp-card:hover { transform: translateY(-4px); box-shadow: 0 16px 30px -18px rgba(0, 60, 120, 0.35); }
+.bp-card h3 { margin: 12px 0 6px; font-size: 19px; font-weight: 600; line-height: 1.2; }
+.bp-card p { margin: 0; font-size: 15px; line-height: 1.45; color: var(--bp-muted); }
+.bp-card__ico {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(0, 130, 224, 0.1);
+  color: var(--bp-blue);
+}
+.bp-card__ico svg { width: 22px; height: 22px; }
+.bp-sec__foot { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: auto; }
+.bp-sec__note { font-size: 14px; color: var(--bp-muted); max-width: 300px; }
+.bp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 0 34px;
+  border-radius: 50px;
+  background: var(--bp-orange);
+  color: #fff !important;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.bp-btn:focus-visible, .bp-card:focus-visible { outline: 2px solid var(--bp-blue); outline-offset: 3px; }
+
+@media (max-width: 960px) {
+  .bp-sec { padding: 70px 16px 20px; }
+  .bp-sec__title { font-size: 28px; }
+  .bp-sec__lead { font-size: 16px; margin-bottom: 28px; }
+  .bp-sec__grid { grid-template-columns: 1fr; }
+  .bp-sec--flip .bp-sec__visual { order: 0; }
+  .bp-sec__visual { min-height: 320px; padding: 20px; }
+  .bp-sec__visual h3 { font-size: 21px; }
+}
+@media (max-width: 560px) {
+  .bp-cards { grid-template-columns: 1fr; }
+  .bp-btn { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bp-sec * { transition: none !important; }
+}

@@ -57,11 +57,13 @@ html.bp-intro::after {
   line-height: 1.05;
   letter-spacing: -0.045em;
 }
-.bp-intro__brand span { display: inline-block; transform: translateY(105%); }
-.bp-intro__brand .is-accent { color: #0082e0; }
-.bp-intro.is-run .bp-intro__brand span {
-  animation: bpWordIn 0.7s calc(0.2s + var(--i) * 0.1s) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+@media (max-width: 700px) {
+  /* the brand spans most of a phone's width: lift the words above it */
+  .bp-intro__words { bottom: calc(5vh + 17vw); }
 }
+.bp-intro__brand > span { display: inline-block; transform: translateY(105%); }
+.bp-intro__brand .is-accent { color: #0082e0; }
+.bp-intro.is-run .bp-intro__brand > span { animation: bpWordIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
 /* ---------- scroll reveal ---------- */
 .bp-rv { opacity: 0; transform: translateY(28px); filter: blur(6px); }
