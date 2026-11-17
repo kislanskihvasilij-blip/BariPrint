@@ -1,4 +1,20 @@
-User-agent: *
-Allow: /
+User-Agent: *
+Disallow: /page123766546.html
+Disallow: /ofsetnaya-pechat
+Disallow: /page123350046.html
+Disallow: /page123460426.html
+Disallow: /footer
+Disallow: /page123549396.html
+Disallow: /page131718746.html
+Disallow: /tilda/form*
+Disallow: /tilda/rec*
+Disallow: /tilda/click*
+Disallow: /tilda/scroll*
+Disallow: /tilda/popup*
+Disallow: /tilda/cart*
+Disallow: /tilda/product*
+Disallow: /tilda/event*
+Disallow:
+
 
 Sitemap: https://bari-print.ru/sitemap.xml
