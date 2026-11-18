@@ -1,0 +1,54 @@
+{
+  "@type": ["LocalBusiness", "ProfessionalService"],
+  "@id": "https://bari-print.ru/#org",
+  "name": "Бари Принт",
+  "legalName": "ИП Барибан Анна Геннадьевна",
+  "url": "https://bari-print.ru/",
+  "logo": "https://bari-print.ru/assets/img/logo.png",
+  "image": "https://bari-print.ru/assets/img/og-home.jpg",
+  "description": "Рекламно-производственная компания полного цикла в Краснодаре: широкоформатная, интерьерная, офсетная и УФ-печать, наружная реклама, оформление фасадов, сувенирная продукция, 3D-печать и разработка сайтов.",
+  "foundingDate": "2014",
+  "taxID": "616483526441",
+  "telephone": "+7-964-894-38-38",
+  "email": "Bariprint23@yandex.ru",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Зиповская, 5в, лит. С",
+    "addressLocality": "Краснодар",
+    "addressRegion": "Краснодарский край",
+    "postalCode": "350024",
+    "addressCountry": "RU"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 45.06221, "longitude": 38.989947 },
+  "areaServed": [
+    { "@type": "City", "name": "Краснодар" },
+    { "@type": "AdministrativeArea", "name": "Краснодарский край" }
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "sameAs": [
+    "https://t.me/BariPrint",
+    "https://vk.com/bariprint",
+    "https://max.ru/u/f9LHodD0cOI9589jqY76bFRSaPPkosjoE7GcbVjQLxqnlvlsxVHP6u1AeuU"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Услуги Бари Принт",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Широкоформатная печать" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Интерьерная печать" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Офсетная печать" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "УФ-печать" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Наружная реклама" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Оформление фасадов" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Сувенирная продукция" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Таблички и наклейки со шрифтом Брайля" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "3D-печать (Creality, Bambu Lab)" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Разработка сайтов" } }
+    ]
+  }
+}
